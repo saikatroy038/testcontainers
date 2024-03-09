@@ -25,22 +25,19 @@ import static org.junit.Assert.assertTrue;
 public class EmployeeIntegrationTest {
 
 	private static final String URI_FORMAT = "http://localhost:%d/%s";
-
 	private static final String RESOURCE = "employees";
-
 	private static final PostgreSQLContainer<?> CONTAINER = new PostgreSQLContainer<>("postgres:latest");
-
+	
 	static {
 		CONTAINER.start();
 	}
 
 	@LocalServerPort
 	private int port;
-
+	
 	private String uri;
-
 	private RestTemplate restTemplate;
-
+	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
